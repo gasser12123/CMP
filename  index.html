@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090711">
+<title>VIP MOTORS | سوق كار باركينج</title>
+<style>
+:root{--bg:#090711;--card:#151120;--purple:#a855f7;--pink:#ec4899;--text:#f8f5ff;--muted:#aaa2bd;--line:#30243f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:5;background:#0c0915ed;backdrop-filter:blur(15px);border-bottom:1px solid var(--line);padding:13px 5%}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:22px;font-weight:900;color:#d8a6ff}
+.logo span{color:var(--pink)}
+nav{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+nav a:hover{color:#fff}
+.wrap{width:min(1100px,92%);margin:auto}
+.hero{padding:65px 0 40px;text-align:center;background:radial-gradient(ellipse at top,#54217b55,transparent 65%)}
+.pill{display:inline-block;border:1px solid #7445a0;border-radius:30px;padding:7px 13px;color:#d9a8ff;font-size:12px}
+h1{font-size:clamp(32px,7vw,58px);margin:20px 0 12px;line-height:1.3}
+h1 span{background:linear-gradient(90deg,#c084fc,#f472b6);color:transparent;background-clip:text}
+p{line-height:1.9}
+.muted{color:var(--muted)}
+.btn{border:0;border-radius:11px;padding:12px 17px;font-weight:bold;background:linear-gradient(110deg,#9333ea,#db2777);color:white;display:inline-block}
+.btn.secondary{background:#21172e;border:1px solid var(--line)}
+.btn.danger{background:#7f1d1d}
+.btn.small{padding:8px 11px;font-size:12px}
+.searchbox{margin:22px auto 0;max-width:660px;display:flex;gap:8px}
+input,select,textarea{width:100%;background:#0f0b19;color:white;border:1px solid var(--line);border-radius:10px;padding:12px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--purple)}
+.searchbox input{flex:1;min-width:0}
+section{padding:28px 0}
+.section-title{font-size:23px;margin:0 0 7px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.chip{padding:9px 14px;background:#171020;color:#d4c6e8;border:1px solid var(--line);border-radius:30px}
+.chip.active{background:#6b21a8;border-color:#c084fc;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px}
+.card{background:linear-gradient(145deg,#191323,#100d18);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.card img{width:100%;height:170px;object-fit:cover;background:#21172e}
+.card-body{padding:15px}
+.tag{font-size:11px;border-radius:20px;background:#37204c;color:#e9caff;padding:5px 9px;display:inline-block}
+.price{color:#e9a8ff;font-weight:bold;margin:12px 0}
+.card-actions{display:flex;gap:8px;flex-wrap:wrap}
+.card-actions>*{flex:1;text-align:center}
+.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:15px}
+.colors{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:12px}
+.color-card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.swatch{height:75px}
+.color-info{padding:11px;font-size:13px}
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);margin-top:35px}
+.notice{font-size:12px;color:var(--muted);margin-top:12px}
+.hidden{display:none!important}
+.overlay{position:fixed;inset:0;background:#000c;z-index:10;overflow:auto;padding:18px}
+.modal{width:min(720px,100%);margin:25px auto;background:#110d1b;border:1px solid #49315f;border-radius:17px;padding:20px}
+.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;font-size:13px;color:#d8cce8}
+.field.full{grid-column:1/-1}
+.admin-list{display:grid;gap:9px;margin:15px 0}
+.admin-row{background:#1a1324;border:1px solid var(--line);padding:12px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+@media(max-width:560px){.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{padding-top:42px}nav{gap:9px}.logo{font-size:19px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <a href="#" class="logo">VIP <span>MOTORS</span> ◆</a>
+  <nav>
+   <a href="#cars">السيارات</a>
+   <a href="#accounts">الحسابات</a>
+   <a href="#services">الخدمات</a>
+   <a href="#colors">الألوان</a>
+   <a href="#contact">تواصل معنا</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+ <div class="hero">
+  <div class="wrap">
+   <span class="pill">◆ عالم التميز في Car Parking Multiplayer</span>
+   <h1>سوقك الخاص في <span>VIP MOTORS</span></h1>
+   <p class="muted">سيارات مميزة، حسابات، خدمات وألوان في مكان واحد.</p>
+   <a class="btn" href="#market">تصفح السوق ←</a>
+   <div class="searchbox">
+    <input id="search" placeholder="ابحث عن سيارة أو حساب أو خدمة..." aria-label="البحث">
+    <button class="btn" id="searchBtn">بحث</button>
+   </div>
+   <p class="notice">للوصول إلى لوحة الإدارة، اكتب كلمة الدخول في مربع البحث.</p>
+  </div>
+ </div>
+
+ <section id="market" class="wrap">
+  <h2 class="section-title">سوق الإعلانات</h2>
+  <p class="muted">اختار القسم وابحث عن اللي يناسبك.</p>
+  <div class="filters" id="filters">
+   <button class="chip active" data-filter="all">الكل</button>
+   <button class="chip" data-filter="car">السيارات</button>
+   <button class="chip" data-filter="account">الحسابات</button>
+   <button class="chip" data-filter="service">الخدمات</button>
+  </div>
+  <div id="products" class="grid"></div>
+  <p class="notice">الإعلانات الافتراضية أمثلة توضيحية وليست عروض بيع حقيقية.</p>
+ </section>
+
+ <section id="cars" class="wrap">
+  <h2 class="section-title">🚘 قسم السيارات</h2>
+  <p class="muted">اعثر على السيارة التي تبحث عنها.</p>
+  <div id="carsGrid" class="grid"></div>
+ </section>
+
+ <section id="accounts" class="wrap">
+  <h2 class="section-title">👤 قسم الحسابات</h2>
+  <p class="muted">إعلانات حسابات اللعبة ومعلوماتها.</p>
+  <div id="accountsGrid" class="grid"></div>
+ </section>
+
+ <section id="services" class="wrap">
+  <h2 class="section-title">⚡ الخدمات</h2>
+  <p class="muted">تصفح الخدمات التي يضيفها مدير الموقع.</p>
+  <div id="servicesGrid" class="grid"></div>
+ </section>
+
+ <section id="colors" class="wrap">
+  <h2 class="section-title">🎨 أكواد الألوان</h2>
+  <p class="muted">انسخ كود اللون الذي تحتاجه.</p>
+  <div id="colorsGrid" class="colors"></div>
+ </section>
+
+ <section id="contact" class="wrap">
+  <div class="card card-body">
+   <h2 class="section-title">عندك إعلان؟</h2>
+   <p class="muted">تواصل معنا على واتساب لطلب إضافة إعلان مجاني.</p>
+   <a class="btn" href="https://wa.me/201203974024" target="_blank" rel="noopener">إضافة إعلان مجاني عبر واتساب</a>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="logo">VIP <span>MOTORS</span> ◆</div>
+  <p>وجهتك لعالم Car Parking Multiplayer</p>
+  <small>© VIP MOTORS — جميع الحقوق محفوظة</small>
+ </div>
+</footer>
+
+<div id="overlay" class="overlay hidden">
+ <div class="modal">
+  <div class="modal-head">
+   <h2 id="modalTitle">لوحة الإدارة</h2>
+   <button class="btn secondary small" id="closeModal">إغلاق ✕</button>
+  </div>
+  <div id="modalContent"></div>
+ </div>
+</div>
+
+<script>
+"use strict";
+
+/*
+  نسخة HTML تجريبية:
+  البيانات وكلمات السر محلية في هذا المتصفح فقط.
+  لا تستخدم هذه النسخة لإدارة بيانات حساسة.
+  للإدارة الآمنة والنشر المشترك، يلزم Backend وقاعدة بيانات.
+*/
+const WA = "https://wa.me/201203974024";
+const PASS_KEY = "vip_motors_admin_pass_demo";
+const DATA_KEY = "vip_motors_products_demo";
+const COLORS_KEY = "vip_motors_colors_demo";
+
+const initialProducts = [
+ {id:1,type:"car",name:"سيارة تجريبية",price:"يحدد السعر",description:"مثال توضيحي لإعلان سيارة. استبدله بإعلان حقيقي.",image:"",created:1},
+ {id:2,type:"account",name:"حساب تجريبي",price:"يحدد السعر",description:"مثال توضيحي لإعلان حساب. لا يحتوي على بيانات دخول.",image:"",created:2},
+ {id:3,type:"service",name:"خدمة تجريبية",price:"يحدد السعر",description:"أضف تفاصيل الخدمة والسعر من لوحة الإدارة.",image:"",created:3}
+];
+const initialColors = [
+ {id:11,name:"بنفسجي",code:"#8B2BE2"},
+ {id:12,name:"أزرق نيون",code:"#00AEEF"},
+ {id:13,name:"أحمر",code:"#F52B42"},
+ {id:14,name:"ذهبي",code:"#D6AD45"}
+];
+
+function readJSON(key,fallback){
+ try{
+  const v=localStorage.getItem(key);
+  if(v===null)return fallback;
+  const data=JSON.parse(v);
+  return Array.isArray(data)?data:fallback;
+ }catch(e){return fallback;}
+}
+let products=readJSON(DATA_KEY,initialProducts);
+let colors=readJSON(COLORS_KEY,initialColors);
+let activeFilter="all";
+let editingId=null;
+let editingColorId=null;
+let adminOpen=false;
+
+function saveProducts(){localStorage.setItem(DATA_KEY,JSON.stringify(products));}
+function saveColors(){localStorage.setItem(COLORS_KEY,JSON.stringify(colors));}
+function esc(value){
+ return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function typeName(type){return {car:"سيارة",account:"حساب",service:"خدمة"}[type]||"إعلان";}
+function safeColor(code){
+ return /^#[0-9a-fA-F]{6}$/.test(code)?code:"#8B2BE2";
+}
+function productCard(p){
+ const image=p.image && /^https?:\/\//i.test(p.image)
+  ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'">`
+  : `<div style="height:110px;display:grid;place-items:center;font-size:38px;background:radial-gradient(circle,#51217a,#171020)">◆</div>`;
+ return `<article class="card">${image}<div class="card-body">
+  <span class="tag">${typeName(p.type)}</span>
+  <h3>${esc(p.name)}</h3>
+  <p class="muted">${esc(p.description||"لا توجد تفاصيل إضافية.")}</p>
+  <div class="price">${esc(p.price||"السعر عند التواصل")}</div>
+  <div class="card-actions"><a class="btn small" href="${WA}?text=${encodeURIComponent("مرحبًا، أريد الاستفسار عن: "+p.name)}" target="_blank" rel="noopener">استفسار</a></div>
+ </div></article>`;
+}
+function renderProducts(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const filtered=products.filter(p=>{
+  const matchesType=activeFilter==="all"||p.type===activeFilter;
+  const hay=[p.name,p.description,p.price,typeName(p.type)].join(" ").toLowerCase();
+  return matchesType&&hay.includes(q);
+ });
+ document.getElementById("products").innerHTML=filtered.length
+  ?filtered.map(productCard).join("")
+  :'<div class="empty">لا توجد إعلانات مطابقة للبحث.</div>';
+ for(const [type,id] of [["car","carsGrid"],["account","accountsGrid"],["service","servicesGrid"]]){
+  const items=products.filter(p=>p.type===type);
+  document.getElementById(id).innerHTML=items.length?items.map(productCard).join(""):'<div class="empty">لا توجد إعلانات في هذا القسم حاليًا.</div>';
+ }
+}
+function renderColors(){
+ document.getElementById("colorsGrid").innerHTML=colors.length?colors.map(c=>
+  `<div class="color-card"><div class="swatch" style="background:${safeColor(c.code)}"></div>
+   <div class="color-info"><strong>${esc(c.name)}</strong><p dir="ltr">${esc(c.code)}</p>
+   <button class="btn small" onclick="copyColor('${esc(c.code)}')">نسخ الكود</button></div></div>`
+ ).join(""):'<div class="empty">لا توجد أكواد ألوان.</div>';
+}
+async function copyColor(code){
+ try{await navigator.clipboard.writeText(code);alert("تم نسخ "+code);}
+ catch(e){prompt("انسخ الكود:",code);}
+}
+function showModal(title,html){
+ document.getElementById("modalTitle").textContent=title;
+ document.getElementById("modalContent").innerHTML=html;
+ document.getElementById("overlay").classList.remove("hidden");
+}
+function closeModal(){
+ document.getElementById("overlay").classList.add("hidden");
+}
+document.getElementById("closeModal").addEventListener("click",closeModal);
+document.getElementById("overlay").addEventListener("click",e=>{
+ if(e.target.id==="overlay")closeModal();
+});
+
+function handleSearch(){
+ const q=document.getElementById("search").value.trim();
+ // كلمة دخول مخفية في البحث: CMP2
+ if(q==="CMP2"){
+  document.getElementById("search").value="";
+  openAdminLogin();
+  return;
+ }
+ renderProducts();
+}
+document.getElementById("searchBtn").addEventListener("click",handleSearch);
+document.getElementById("search").addEventListener("keydown",e=>{
+ if(e.key==="Enter")handleSearch();
+ else setTimeout(renderProducts,0);
+});
+document.querySelectorAll("[data-filter]").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  activeFilter=btn.dataset.filter;
+  document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b===btn));
+  renderProducts();
+ });
+});
+
+function openAdminLogin(){
+ if(adminOpen){renderAdmin();return;}
+ showModal("دخول لوحة الإدارة",`
+  <p class="muted">أدخل كلمة سر الإدارة لفتح اللوحة.</p>
+  <form id="loginForm">
+   <label class="field">كلمة السر
+    <input id="loginPass" type="password" required autocomplete="current-password" placeholder="كلمة السر">
+   </label>
+   <button class="btn" type="submit">دخول</button>
+   <p class="notice">تنبيه: هذه حماية تجريبية داخل المتصفح وليست نظام مصادقة آمنًا.</p>
+  </form>`);
+ document.getElementById("loginForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const current=localStorage.getItem(PASS_KEY)||"CMP1";
+  if(document.getElementById("loginPass").value===current){
+   adminOpen=true;
+   renderAdmin();
+  }else alert("كلمة السر غير صحيحة.");
+ });
+}
+function renderAdmin(){
+ showModal("لوحة إدارة VIP MOTORS",`
+  <p class="muted">إدارة الإعلانات والألوان وتغيير كلمة السر.</p>
+  <div class="filters">
+   <button class="btn" id="addProductBtn">+ إضافة إعلان</button>
+   <button class="btn secondary" id="manageColorsBtn">إدارة الألوان</button>
+   <button class="btn secondary" id="changePassBtn">تغيير كلمة السر</button>
+   <button class="btn danger" id="logoutBtn">تسجيل الخروج</button>
+  </div>
+  <h3>الإعلانات (${products.length})</h3>
+  <div class="admin-list" id="adminList"></div>
+  <p class="notice">التغييرات تُحفظ محليًا على هذا المتصفح فقط، ولا تُنشر تلقائيًا للزوار الآخرين.</p>`);
+ document.getElementById("addProductBtn").onclick=()=>productForm();
+ document.getElementById("manageColorsBtn").onclick=renderColorAdmin;
+ document.getElementById("changePassBtn").onclick=changePasswordForm;
+ document.getElementById("logoutBtn").onclick=()=>{
+  adminOpen=false;
+  closeModal();
+ };
+ const list=document.getElementById("adminList");
+ list.innerHTML=products.length?products.map(p=>`
+  <div class="admin-row">
+   <div><strong>${esc(p.name)}</strong><br><small class="muted">${typeName(p.type)} · ${esc(p.price)}</small></div>
+   <div class="filters" style="margin:0">
+    <button class="btn secondary small" data-edit="${p.id}">تعديل</button>
+    <button class="btn danger small" data-delete="${p.id}">حذف</button>
+   </div>
+  </div>`).join(""):'<div class="empty">لا توجد إعلانات.</div>';
+ list.querySelectorAll("[data-edit]").forEach(b=>b.onclick=()=>productForm(Number(b.dataset.edit)));
+ list.querySelectorAll("[data-delete]").forEach(b=>b.onclick=()=>{
+  const id=Number(b.dataset.delete);
+  if(confirm("هل تريد حذف هذا الإعلان؟")){
+   products=products.filter(p=>p.id!==id);
+   saveProducts();renderProducts();renderAdmin();
+  }
+ });
+}
+function productForm(id=null){
+ editingId=id;
+ const p=id?products.find(x=>x.id===id):{type:"car",name:"",price:"",description:"",image:""};
+ showModal(id?"تعديل إعلان":"إضافة إعلان",`
+  <form id="productForm">
+   <div class="formgrid">
+    <label class="field">القسم
+     <select id="pType">
+      <option value="car" ${p.type==="car"?"selected":""}>سيارات</option>
+      <option value="account" ${p.type==="account"?"selected":""}>حسابات</option>
+      <option value="service" ${p.type==="service"?"selected":""}>خدمات</option>
+     </select>
+    </label>
+    <label class="field">اسم الإعلان<input id="pName" required maxlength="100" value="${esc(p.name)}"></label>
+    <label class="field">السعر<input id="pPrice" maxlength="80" value="${esc(p.price)}" placeholder="مثال: 100 جنيه"></label>
+    <label class="field">رابط الصورة<input id="pImage" type="url" value="${esc(p.image)}" placeholder="https://..."></label>
+    <label class="field full">الوصف<textarea id="pDescription" rows="4" maxlength="1000">${esc(p.description)}</textarea></label>
+   </div>
+   <button class="btn" type="submit">حفظ الإعلان</button>
+   <p class="notice">استخدم رابط صورة تملك حق نشرها. لا تضع كلمات مرور الحسابات أو بيانات شخصية.</p>
+  </form>`);
+ document.getElementById("productForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const item={
+   id:id||Date.now(),
+   type:document.getElementById("pType").value,
+   name:document.getElementById("pName").value.trim(),
+   price:document.getElementById("pPrice").value.trim(),
+   image:document.getElementById("pImage").value.trim(),
+   description:document.getElementById("pDescription").value.trim()
+  };
+  if(!item.name){alert("اكتب اسم الإعلان.");return;}
+  if(id)products=products.map(x=>x.id===id?item:x);
+  else products.unshift(item);
+  saveProducts();renderProducts();renderAdmin();
+ });
+}
+function changePasswordForm(){
+ showModal("تغيير كلمة السر",`
+  <form id="changePassForm">
+   <label class="field">كلمة السر الحالية
+    <input id="oldPass" type="password" required autocomplete="current-password">
+   </label>
+   <label class="field">كلمة السر الجديدة
+    <input id="newPass" type="password" required minlength="4" autocomplete="new-password">
+   </label>
+   <label class="field">تأكيد كلمة السر الجديدة
+    <input id="confirmPass" type="password" required minlength="4" autocomplete="new-password">
+   </label>
+   <button class="btn" type="submit">حفظ كلمة السر الجديدة</button>
+  </form>`);
+ document.getElementById("changePassForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const oldPass=document.getElementById("oldPass").value;
+  const newPass=document.getElementById("newPass").value;
+  const confirmPass=document.getElementById("confirmPass").value;
+  const current=localStorage.getItem(PASS_KEY)||"CMP1";
+  if(oldPass!==current){alert("كلمة السر الحالية غير صحيحة.");return;}
+  if(newPass!==confirmPass){alert("كلمتا السر غير متطابقتين.");return;}
+  if(newPass.length<4){alert("كلمة السر قصيرة جدًا.");return;}
+  localStorage.setItem(PASS_KEY,newPass);
+  alert("تم تغيير كلمة السر في هذا المتصفح.");
+  renderAdmin();
+ });
+}
+function renderColorAdmin(){
+ showModal("إدارة أكواد الألوان",`
+  <form id="colorForm">
+   <div class="formgrid">
+    <label class="field">اسم اللون<input id="colorName" required maxlength="60"></label>
+    <label class="field">كود HEX<input id="colorCode" required pattern="#[0-9a-fA-F]{6}" placeholder="#8B2BE2"></label>
+   </div>
+   <button class="btn" type="submit">إضافة لون</button>
+  </form>
+  <div class="admin-list" id="colorAdminList"></div>`);
+ document.getElementById("colorForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=document.getElementById("colorName").value.trim();
+  const code=document.getElementById("colorCode").value.trim();
+  if(!/^#[0-9a-fA-F]{6}$/.test(code)){alert("اكتب كود HEX صحيحًا مثل #8B2BE2");return;}
+  colors.push({id:Date.now(),name,code});
+  saveColors();renderColors();renderColorAdmin();
+ });
+ const list=document.getElementById("colorAdminList");
+ list.innerHTML=colors.map(c=>`
+  <div class="admin-row"><span><span style="display:inline-block;width:15px;height:15px;border-radius:4px;background:${safeColor(c.code)}"></span> ${esc(c.name)} — ${esc(c.code)}</span>
+  <button class="btn danger small" data-delcolor="${c.id}">حذف</button></div>`).join("")||'<p class="muted">لا توجد ألوان.</p>';
+ list.querySelectorAll("[data-delcolor]").forEach(b=>b.onclick=()=>{
+  colors=colors.filter(c=>c.id!==Number(b.dataset.delcolor));
+  saveColors();renderColors();renderColorAdmin();
+ });
+}
+renderProducts();
+renderColors();
+</script>
+</body>
+</html>
